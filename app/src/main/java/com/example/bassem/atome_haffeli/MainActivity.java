@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private View mLoginFormView;
     public static String userlogin;
     public static String userpassword;
-    public static String chemail;
+    public static String chname;
     private CheckBox checkBoxNewAccount, checkBoxPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,27 +159,27 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void processFinish(String result) {
 
-                    chemail = "";
+                    chname = "";
                     if (result.isEmpty()) {
                         Toast.makeText(MainActivity.this, "Vérifiez votre connexion !", Toast.LENGTH_LONG).show();
-                    } else{
+                    } else{//Toast.makeText(MainActivity.this, result , Toast.LENGTH_LONG).show();
                         if ((result.equals("erreur")) || (result.equals("NonClt"))){
                         if (result.equals("NonClt")) {
                             Toast.makeText(getApplicationContext(), "Application pour client uniquement !", Toast.LENGTH_LONG).show();
-                            chemail = "";
+                            chname = "";
                             mPasswordView.setText("");
                             mUserView.setText("");
                             mUserView.requestFocus();
                         } else {
                             if (result.equals("erreur")) {
                                 Toast.makeText(getApplicationContext(), "Le mot de passe ou l'email entré est incorrect !", Toast.LENGTH_LONG).show();
-                                chemail = "";
+                                chname = "";
                                 mPasswordView.setText("");
                                 mPasswordView.requestFocus();
                             }
                         }
                         } else {
-                                chemail = result;
+                            chname = result;
 
                                 //showProgress(true);
                                 EditText a = (EditText) findViewById(R.id.TF_username);

@@ -26,14 +26,13 @@
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true">
             <RelativeLayout
-                android:layout_width="327dp"
+                android:layout_width="wrap_content"
                 android:layout_height="162dp"
                 android:orientation="vertical"
                 android:background="@drawable/logo_app"
                 android:layout_gravity="center_horizontal"
                 android:descendantFocusability="beforeDescendants"
-                android:focusableInTouchMode="true"
-                android:layout_weight="3.53">
+                android:focusableInTouchMode="true">
                 <!--android:layout_height="261dp"-->
 
             </RelativeLayout>
@@ -59,7 +58,8 @@
                     android:singleLine="true"
                     android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
                     android:descendantFocusability="beforeDescendants"
-                    android:focusableInTouchMode="true"/>
+                    android:focusableInTouchMode="true"
+                    android:inputType="textEmailAddress"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
