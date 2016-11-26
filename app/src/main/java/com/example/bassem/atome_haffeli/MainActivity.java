@@ -160,17 +160,10 @@ public class MainActivity extends AppCompatActivity {
                 public void processFinish(String result) {
 
                     chemail = "";
-                    //result1 = "0";
-                    //Toast.makeText(Login.this, result, Toast.LENGTH_LONG).show();
-                    /*
-                    ProgressDialog mPogressDialog = new ProgressDialog(Login.this);
-                    mPogressDialog.show();
-                    mPogressDialog.setMessage("Attends SVP...");
-                    mPogressDialog.setCancelable(false);
-                    */
                     if (result.isEmpty()) {
                         Toast.makeText(MainActivity.this, "Vérifiez votre connexion !", Toast.LENGTH_LONG).show();
-                    } else{if ((result.equals("erreur")) || (result.equals("NonClt"))){
+                    } else{
+                        if ((result.equals("erreur")) || (result.equals("NonClt"))){
                         if (result.equals("NonClt")) {
                             Toast.makeText(getApplicationContext(), "Application pour client uniquement !", Toast.LENGTH_LONG).show();
                             chemail = "";
@@ -184,57 +177,8 @@ public class MainActivity extends AppCompatActivity {
                                 mPasswordView.setText("");
                                 mPasswordView.requestFocus();
                             }
-                        }/*
-                        if ((result.equals("errormdp")) || (result.equals("errorlog")) || (result.equals("NonClt"))) { /*
-                            //result1="1";
-                            if (result.equals("NonClt")) {
-                                Toast.makeText(getApplicationContext(), "Application pour client uniquement !", Toast.LENGTH_LONG).show();
-                                chemail = "";
-                                mPasswordView.setText("");
-                                mUserView.setText("");
-                                mUserView.requestFocus();
-                            } else {
-                                if (result.equals("errormdp")) {
-                                    Toast.makeText(getApplicationContext(), "Le mot de passe entré est incorrect !", Toast.LENGTH_LONG).show();
-                                    chemail = "";
-                                    mPasswordView.setText("");
-                                    mPasswordView.requestFocus();
-                                } else {
-                                    if (result.equals("errorlog")) {
-                                        Toast.makeText(getApplicationContext(), "L'identifiant entré ne correspond à aucun compte !", Toast.LENGTH_LONG).show();
-                                        mPasswordView.setText("");
-                                        mUserView.setText("");
-                                        mUserView.requestFocus();
-                                    }
-                                }
-                            }*/
+                        }
                         } else {
-
-                            if (result.equals("success")) {
-                                Toast.makeText(MainActivity.this, "Pas de email", Toast.LENGTH_LONG).show();
-                                chemail = "";
-
-                                //showProgress(true);
-                                EditText a = (EditText) findViewById(R.id.TF_username);
-                                String str = a.getText().toString();
-
-                                userlogin = str;
-                                EditText b = (EditText) findViewById(R.id.TF_password);
-                                String str2 = b.getText().toString();
-
-                                userpassword = str2;
-
-
-                                new Username().setUsername(userlogin);
-
-                                Intent i = new Intent(MainActivity.this, SecondActivity.class);
-                                i.putExtra("Username", str);
-                                startActivity(i);
-                            } else {
-                                //if (!((result.equals("errormdp")) || (result.equals("errorlog")) || (result.equals("NonClt")))){
-//                        if(!(result.equals("errormdp"))&& !(result.equals("errorlog")) && !(result.equals("NonClt")))
-//                        {
-                                //Toast.makeText(this, result, Toast.LENGTH_LONG).show();
                                 chemail = result;
 
                                 //showProgress(true);
@@ -247,13 +191,11 @@ public class MainActivity extends AppCompatActivity {
 
                                 userpassword = str2;
 
-
                                 new Username().setUsername(userlogin);
 
                                 Intent i = new Intent(MainActivity.this, SecondActivity.class);
                                 i.putExtra("Username", str);
                                 startActivity(i);
-                            }
                         }
                     }
 
