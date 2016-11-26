@@ -1,17 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.bassem.atome_haffeli.MainActivity">
+    tools:context="com.example.bassem.atome_haffeli.MainActivity"
+    android:gravity="center_vertical|clip_horizontal"
+    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="517dp"
+        android:paddingTop="@dimen/activity_vertical_margin">
+        <LinearLayout
+            android:id="@+id/user_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|clip_horizontal"
+            android:orientation="vertical"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+            <RelativeLayout
+                android:layout_width="327dp"
+                android:layout_height="162dp"
+                android:orientation="vertical"
+                android:background="@drawable/logo_app"
+                android:layout_gravity="center_horizontal"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:layout_weight="3.53">
+                <!--android:layout_height="261dp"-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+            </RelativeLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/usernameWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="0.46"
+                android:layout_marginTop="15dp"
+                android:color="@android:color/black"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+
+                <AutoCompleteTextView
+                    android:id="@+id/TF_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_username"
+                    android:color="@android:color/black"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/passwordWrapper"
+                android:layout_width="match_parent"
+                android:color="@android:color/black"
+                android:layout_height="60dp"
+                android:layout_weight="0.46"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/TF_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:color="@android:color/black"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"/>
+
+                <!-- <requestFocus /></EditText> -->
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--style="@android:style/Widget.Material.Button.Borderless.Colored"-->
+            <Button
+                android:id="@+id/login_button"
+                android:theme="@style/MyButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/action_login"
+                android:onClick="onButtonClick"
+                android:layout_weight="0.54"
+                android:elevation="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="normal|bold|italic"
+                android:textSize="18sp"
+                android:textColor="@android:color/background_light"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:text="Mot de passe oublié"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBoxPassword"
+                android:layout_weight="0.20"
+                android:onClick="onCheckboxClicked"/>
+
+
+            <CheckBox
+                android:text="Créer un nouveau compte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBoxNewAccount"
+                android:layout_weight="0.20"
+                android:onClick="onCheckboxClicked"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

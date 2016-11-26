@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Atome_Haffeli</string>
+    <string name="app_name">Atome Haffeli</string>
+    <string name="prompt_username">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in_short" />
+    <string name="action_login">Se connecter</string>
+    <string name="prompt_nom">Nom</string>
+    <string name="prompt_prenom">Prénom</string>
+    <string name="prompt_tel">Tel</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_register">Enregistrer</string>
+    <string name="prompt_sex">Sexe</string>
+    <string name="prompt_etat">Etat civil</string>
+    <string name="error_invalid_username">Cet identifiant est très court!</string>
+    <string name="error_invalid_password">Ce mot de passe est très court!</string>
+    <string name="error_incorrect_password">Ce mot de passe est incorrect</string>
+    <string name="error_incorrect_username">Cet identifiant est incorrect</string>
+    <string name="error_field_required">Ce champ est obligatoire</string>
 </resources>
